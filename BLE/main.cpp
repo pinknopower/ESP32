@@ -76,7 +76,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if(flag2){
     aleatorio = random(1,100);
     alea = (String) aleatorio;  
