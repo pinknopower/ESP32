@@ -1,17 +1,17 @@
 #include "AiEsp32RotaryEncoder.h"
 #include "Arduino.h"
-#define CLK 27     //旋轉編碼器 CLK 連接 Arduino pin 2
-#define DT  26      //旋轉編碼器 DT 連接 Arduino pin 3
-#define SW  14     //旋轉編碼器 SW 連接 Arduino pin 4
+#define CLK 27     //旋轉編碼器 CLK
+#define DT  26      //旋轉編碼器 DT 
+#define SW  14     //旋轉編碼器 SW 
 int f=0;
-int pin=27;           //定義一些整數；
+int pin=27;           
 int count = 0;
 int lastCLK = 0;     //lastCLK 為旋轉編碼器 CLK 預設狀態 =0
 int l;
 void ClockChanged()   //副程式 void ClockChanged () 
 {   
-  int clkValue = digitalRead(CLK);  // Arduino 讀入旋轉編碼器 CLK 狀態
-  int dtValue = digitalRead(DT);    // Arduino 讀入旋轉編碼器 DT 狀態
+  int clkValue = digitalRead(CLK);  // 讀入旋轉編碼器 CLK 狀態
+  int dtValue = digitalRead(DT);    // 讀入旋轉編碼器 DT 狀態
   if (lastCLK != clkValue)
   {
     lastCLK = clkValue;
@@ -34,7 +34,7 @@ void setup()
   Serial.begin(115200);
 }
 
-//本程式 void loop() 唯一做的事，是當旋轉編碼器按鍵 SW 被按下時，系統重設，整數 count 歸零，熄滅所有LED燈。
+
 void loop()
 {
   if(f==1){
